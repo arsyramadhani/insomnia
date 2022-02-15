@@ -1,19 +1,30 @@
 {
-  "name": "insomnia",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.10",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10"
-  }
+    "name": "insomnia",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "analyze": "cross-env ANALYZE=true next build",
+        "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+        "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^1.8.3",
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@next/bundle-analyzer": "^12.0.10",
+        "@supabase/supabase-js": "^1.30.0",
+        "cross-env": "^7.0.3",
+        "framer-motion": "^6.2.6",
+        "next": "12.0.10",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-intersection-observer": "^8.33.1"
+    },
+    "devDependencies": {
+        "eslint": "8.9.0",
+        "eslint-config-next": "12.0.10"
+    }
 }
