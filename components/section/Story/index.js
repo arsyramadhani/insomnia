@@ -52,7 +52,7 @@ const Story = ({ data, theme }) => {
                 animate={controls}
                 variants={container}>
                 {data.map((val, i) => (
-                    <Flex w='full' as={MFlex} variants={item}>
+                    <Flex key={i} w='full' as={MFlex} variants={item}>
                         <Box w='8' pos='relative'>
                             <Box
                                 zIndex='10'
