@@ -8,7 +8,7 @@ import {
 } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { item, container } from '../../../utils/animation';
-import { Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import dateConvert from '../../../utils/dateConvert';
 import { MText } from '../../motion';
 
@@ -90,6 +90,13 @@ const Event = ({ data, theme }) => {
                         {val.location}
                     </Text>
                     <Text as={MText}>{val.address}</Text>
+                    <br />
+                    <Button
+                        variant='solid'
+                        bgColor={theme.text_dark}
+                        textColor={theme.text_light}>
+                        Tunjukkan Peta
+                    </Button>
                 </Flex>
             ))}
         </Flex>

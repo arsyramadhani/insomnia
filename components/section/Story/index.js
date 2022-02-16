@@ -94,20 +94,20 @@ const Story = ({ data, theme }) => {
                             flex='1'
                             mb={i === data.length - 1 ? '0' : '4'}
                             borderColor={theme.text_dark}
-                            bgColor={theme.bg_light}
+                            bgColor={theme.text_dark}
                             border='2px'
                             px='4'
                             py='2'
-                            rounded='lg'
-                            maxH='40'
-                            overflowX='scroll'>
+                            rounded='lg'>
                             <Text
                                 fontWeight='bold'
-                                textColor={theme.text_semi}
+                                textColor={theme.text_light}
                                 fontFamily={theme.font_display}>
                                 {date(val.date)}
                             </Text>
-                            <Text fontSize='sm'>{val.text}</Text>
+                            <Text textColor={theme.text_light} fontSize='sm'>
+                                {val.text}
+                            </Text>
                         </Box>
                     </Flex>
                 ))}
