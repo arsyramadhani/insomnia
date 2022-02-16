@@ -19,7 +19,7 @@ export default function Home({ data, error, status }) {
         return <ErrorPage message={'Error'} />;
     }
 
-    console.log(data);
+    // console.log(data);
 
     const userTheme = {
         font_display: 'Playfair Display',
@@ -88,7 +88,7 @@ export async function getServerSideProps(context) {
         .eq('slug', query.pid)
         .order('gender', { foreignTable: 'user_people' })
         .single();
-    console.log(data);
+    // console.log(data);
 
     return {
         props: {

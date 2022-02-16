@@ -7,7 +7,7 @@ import { date } from '../../../utils/dateConvert';
 import { MFlex, MotionText, MText } from '../../motion';
 
 const Story = ({ data, theme }) => {
-    console.log({ story: data });
+    // console.log({ story: data });
 
     const controls = useAnimation();
     const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
