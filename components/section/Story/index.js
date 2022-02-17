@@ -7,7 +7,7 @@ import { date } from '../../../utils/dateConvert';
 import { MFlex, MotionText, MText } from '../../motion';
 
 const Story = ({ data, theme }) => {
-    // console.log({ story: data });
+    console.log({ gallery: data });
 
     const controls = useAnimation();
     const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
@@ -37,9 +37,10 @@ const Story = ({ data, theme }) => {
             <Text
                 as={MText}
                 // variants={item}
-                fontSize='2xl'
+                fontSize='3xl'
                 fontWeight='semibold'
                 fontFamily={theme.font_display}
+                mb='4'
                 textColor={theme.text_dark}
                 variants={item}>
                 Our Story
@@ -101,6 +102,7 @@ const Story = ({ data, theme }) => {
                             rounded='lg'>
                             <Text
                                 fontWeight='bold'
+                                mb='1'
                                 textColor={theme.text_light}
                                 fontFamily={theme.font_display}>
                                 {date(val.date)}
