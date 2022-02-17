@@ -36,6 +36,7 @@ const Gallery = ({ data, theme }) => {
                             pos={'relative'}>
                             <Image
                                 src={val.id}
+                                alt={val.id}
                                 layout='fill'
                                 objectFit='cover'
                                 loader={() => {

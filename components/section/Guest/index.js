@@ -62,6 +62,7 @@ const Guest = ({ id, theme }) => {
             <Stack w='full'>
                 {[1, 2, 3].map((val, i) => (
                     <Flex
+                        key={i}
                         w='full'
                         bg='gray.100'
                         p='4'
