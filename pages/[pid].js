@@ -13,13 +13,15 @@ const Doa = dynamic(() => import('../components/section/Doa'));
 const Event = dynamic(() => import('../components/section/Event'));
 const Countdown = dynamic(() => import('../components/section/Countdown'));
 const Story = dynamic(() => import('../components/section/Story'));
+const Gallery = dynamic(() => import('../components/section/Gallery'));
+const Guest = dynamic(() => import('../components/section/Guest'));
 
-export default function Home({ data, error, status }) {
+export default function Home({ guestId, data, error, status }) {
     if (error !== null) {
         return <ErrorPage message={'Error'} />;
     }
 
-    // console.log(data);
+    console.log(data);
 
     const userTheme = {
         font_display: 'Playfair Display',
@@ -72,6 +74,8 @@ export default function Home({ data, error, status }) {
                 <Story data={data.story} theme={userTheme} />
                 <Countdown data={data.date} theme={userTheme} />
                 <Event data={data.event} theme={userTheme} />
+                <Gallery data={data.gallery} theme={userTheme} />
+                <Guest userId={data.id} guestId={guestId} theme={userTheme} />
             </Box>
         </Box>
     );
@@ -79,11 +83,11 @@ export default function Home({ data, error, status }) {
 
 export async function getServerSideProps(context) {
     const query = context.query;
-
+    const guestId = query.to;
     let { data, error, status } = await supabase
         .from('user_main')
         .select(
-            `*, people:user_people(*), doa:user_doa(*), event:user_event(*), story:user_story(*)`
+            `*, people:user_people(*), doa:user_doa(*), event:user_event(*), story:user_story(*), gallery:user_gallery(*)`
         )
         .eq('slug', query.pid)
         .order('gender', { foreignTable: 'user_people' })
@@ -94,7 +98,8 @@ export async function getServerSideProps(context) {
         props: {
             data: data,
             error: error,
-            status: status
+            status: status,
+            guestId
         }
     };
 }
